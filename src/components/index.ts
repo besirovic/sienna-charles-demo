@@ -9,3 +9,5 @@ export * from "./Label";
 export * from "./Popover";
 export * from "./Tags";
 export * from "./PageLoader";
+export * from "./Tabs";
+export * from "./Table";
