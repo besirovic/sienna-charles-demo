@@ -1,12 +1,7 @@
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableRow,
-	Button,
-} from "@/components";
+import { Table, TableBody, TableHead, TableRow } from "@/components";
 import type { Vendor } from "@/types";
+
+import { VendorsTableRow } from "./components";
 
 interface Props {
 	vendors: Vendor[];
@@ -23,17 +18,7 @@ export const VendorsTable = ({ vendors }: Props) => {
 			</TableRow>
 			<TableBody>
 				{vendors.map((vendor) => (
-					<TableRow key={vendor.id}>
-						<TableCell>{vendor.name}</TableCell>
-						<TableCell>{vendor.city}</TableCell>
-						<TableCell>
-							{vendor.categories.map((category) => category.name).join(", ")}
-						</TableCell>
-						<TableCell className="flex flex-row gap-4 justify-end">
-							<Button>Edit</Button>
-							<Button>Delete</Button>
-						</TableCell>
-					</TableRow>
+					<VendorsTableRow key={vendor.id} vendor={vendor} />
 				))}
 			</TableBody>
 		</Table>

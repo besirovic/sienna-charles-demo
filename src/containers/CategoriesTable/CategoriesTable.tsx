@@ -1,12 +1,7 @@
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableRow,
-	Button,
-} from "@/components";
+import { Table, TableBody, TableHead, TableRow } from "@/components";
 import type { Category } from "@/types";
+
+import { CategoriesTableRow } from "./components";
 
 interface Props {
 	categories: Category[];
@@ -21,13 +16,7 @@ export const CategoriesTable = ({ categories }: Props) => {
 			</TableRow>
 			<TableBody>
 				{categories.map((category) => (
-					<TableRow key={category.id}>
-						<TableCell>{category.name}</TableCell>
-						<TableCell className="flex flex-row gap-4 justify-end">
-							<Button>Edit</Button>
-							<Button>Delete</Button>
-						</TableCell>
-					</TableRow>
+					<CategoriesTableRow key={category.id} category={category} />
 				))}
 			</TableBody>
 		</Table>
