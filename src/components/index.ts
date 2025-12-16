@@ -11,3 +11,5 @@ export * from "./Tags";
 export * from "./PageLoader";
 export * from "./Tabs";
 export * from "./Table";
+export * from "./Header";
+export * from "./PageLayout";

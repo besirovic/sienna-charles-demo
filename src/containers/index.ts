@@ -1,4 +1,4 @@
-export * from "./NewVendorDialog/NewVendorDialog";
-export * from "./NewCategoryDialog/NewCategoryDialog";
+export * from "./VendorForm/VendorForm";
+export * from "./CategoryForm/CategoryForm";
 export * from "./VendorsTable/VendorsTable";
 export * from "./CategoriesTable/CategoriesTable";
