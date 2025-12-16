@@ -81,7 +81,7 @@ export const EditVendor = () => {
 			<Form {...form}>
 				<VendorForm
 					isSubmitting={isUpdatingVendor}
-					submitText="Create"
+					submitText="Update"
 					onSubmit={form.handleSubmit(handleSubmit)}
 					categories={categories}
 				/>
