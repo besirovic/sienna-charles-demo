@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 
-import { PageLayout, Header } from "@/components";
+import { PageLayout, Header, Form } from "@/components";
 import { CategoryForm } from "@/containers";
 import { categoryFormSchema } from "@/validation";
 
@@ -36,10 +36,12 @@ export const NewCategory = () => {
 	return (
 		<PageLayout>
 			<Header />
-			<CategoryForm
-				isSubmitting={isCreatingNewCategory}
-				onSubmit={handleSubmit}
-			/>
+			<Form {...form}>
+				<CategoryForm
+					isSubmitting={isCreatingNewCategory}
+					onSubmit={form.handleSubmit(handleSubmit)}
+				/>
+			</Form>
 		</PageLayout>
 	);
 };
