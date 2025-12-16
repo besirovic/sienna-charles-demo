@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
 
 import { fetchCategoriesQuery, fetchVendorsQuery } from "@/api/queries";
-import { VendorsTable, CategoriesTable } from "@/containers";
 import {
 	PageLoader,
 	Tabs,
@@ -13,6 +12,8 @@ import {
 	Header,
 	PageLayout,
 } from "@/components";
+
+import { VendorsTable, CategoriesTable } from "./containers";
 
 export const Home = () => {
 	const { data: categories = [], isLoading: isLoadingCategories } = useQuery(
