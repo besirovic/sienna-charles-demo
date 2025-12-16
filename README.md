@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# Sienna-Charles demo app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Features
 
-Currently, two official plugins are available:
+Vendors features:
+- listing vendors
+- creating vendors
+- deleting vendors
+- editing vendors
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Categories features:
+- listing categories
+- creating categories
+- deleting categories
+- editing categories
 
-## React Compiler
+### Tech stack
+- `React` + `Vite` - as project base
+- `TanStack Query` - for server-state management
+- `Supabase SDK` - for connecting to Supabase platform
+- `Drizzle Kit` - for managing database schema and running migrations
+- `ShadCn` - for UI components
+- `KiboUI` - for advanced UI components
+- `React Router` - for simple routing
+- `Tailwind CSS` - for styling
+- `React Hook Form` - for creating forms
+- `Zod` - for validation
+  
+### How to run locally
+- Clone the repo
+- Run `yarn install`
+- Create `.env` file in root folder
+- Paste env variables I shared in the report to `.env` file
+- Run `yarn dev`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Known issues
+- Multiselect component from KiboUI used for selecting categories in the form for creating/editing vendor has an issues and does not pick up default values every time. This is known issue and I was not intending to fix it as part of this project
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### What I wanted to showcase
+- ability to implement things quickly
+- ability to think on my own and provide needed features
+- ability to split and organize code in maintainable and scalable structure. PS. this project is small and not enough to show all techniques I use to keep code nicely organized and ready to scale
+- ability to write reusable and sharable code by creating reusable forms for creating/editing vendors and categories to mimic real case of reusability
+ 
