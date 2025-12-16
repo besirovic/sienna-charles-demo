@@ -13,3 +13,4 @@ export * from "./Tabs";
 export * from "./Table";
 export * from "./Header";
 export * from "./PageLayout";
+export * from "./NotFound";

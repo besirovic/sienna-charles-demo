@@ -14,9 +14,9 @@ export const App = () => {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/new-vendor" element={<NewVendor />} />
-				<Route path="/edit-vendor" element={<EditVendor />} />
+				<Route path="/edit-vendor/:id" element={<EditVendor />} />
 				<Route path="/new-category" element={<NewCategory />} />
-				<Route path="/edit-category" element={<EditCategory />} />
+				<Route path="/edit-category/:id" element={<EditCategory />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -27,7 +27,6 @@ export const useCreateNewVendorMutation = ({ onSuccess, onError }: Params) => {
 				.single();
 
 			if (vendorError || !vendor) {
-				console.error(vendorError, vendor);
 				throw new Error("Failed to create vendor");
 			}
 
@@ -38,8 +37,7 @@ export const useCreateNewVendorMutation = ({ onSuccess, onError }: Params) => {
 
 			await supabase.from("vendor_categories").insert(vendorCategories);
 		},
-		onError: (error) => {
-			console.error(error);
+		onError: () => {
 			onError?.();
 		},
 		onSuccess: async () => {

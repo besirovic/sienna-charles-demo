@@ -15,11 +15,16 @@ import type { Category } from "@/types";
 
 interface Props {
 	categories: Category[];
+	selectedCategories?: string[];
 	onChange: (categories: string[]) => void;
 }
 
-export const CategorySelector = ({ categories, onChange }: Props) => {
-	const [selected, setSelected] = useState<string[]>([]);
+export const CategorySelector = ({
+	selectedCategories,
+	categories,
+	onChange,
+}: Props) => {
+	const [selected, setSelected] = useState<string[]>(selectedCategories ?? []);
 	const [, setNewTag] = useState<string>("");
 
 	const handleRemove = (value: string) => {

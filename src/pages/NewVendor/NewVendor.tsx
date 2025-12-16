@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchCategoriesQuery } from "@/api/queries";
-import { PageLayout, Header, PageLoader } from "@/components";
+import { PageLayout, Header, PageLoader, Form } from "@/components";
 import { VendorForm } from "@/containers";
 import { vendorFormSchema } from "@/validation";
 
@@ -43,11 +43,14 @@ export const NewVendor = () => {
 	return (
 		<PageLayout>
 			<Header />
-			<VendorForm
-				isSubmitting={isCreatingNewVendor}
-				onSubmit={handleSubmit}
-				categories={categories}
-			/>
+			<Form {...form}>
+				<VendorForm
+					isSubmitting={isCreatingNewVendor}
+					submitText="Create"
+					onSubmit={form.handleSubmit(handleSubmit)}
+					categories={categories}
+				/>
+			</Form>
 		</PageLayout>
 	);
 };

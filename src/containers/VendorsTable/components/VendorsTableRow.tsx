@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+import { Link } from "react-router";
 
 import { TableCell, TableRow, Button, Spinner } from "@/components";
 import type { Vendor } from "@/types";
@@ -32,7 +33,9 @@ export const VendorsTableRow = ({ vendor }: Props) => {
 				{vendor.categories.map((category) => category.name).join(", ")}
 			</TableCell>
 			<TableCell className="flex flex-row gap-4 justify-end">
-				<Button>Edit</Button>
+				<Link to={`/edit-vendor/${vendor.id}`}>
+					<Button>Edit</Button>
+				</Link>
 				<Button
 					className="min-w-20"
 					onClick={handleDelete}
