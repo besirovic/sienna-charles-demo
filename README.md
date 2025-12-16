@@ -1,5 +1,8 @@
 # Sienna-Charles demo app
 
+Preview the app on:
+https://sienna-charles-demo.vercel.app
+
 ### Features
 
 Vendors features:
